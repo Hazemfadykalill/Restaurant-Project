@@ -297,22 +297,22 @@ function showDetailsByMealId(data) {
         <div class="des">
             <ul class="list-unstyled">
                 <li>${
-                  (data.strMeasure1 == null) 
+                  (data.strMeasure1 == null  | "") 
                     ? $(this).addClass("d-none")
                     : data.strMeasure1
                 }${
-    (data.strIngredient1 == null) 
+    (data.strIngredient1 == null  | "") 
       ? $(this).addClass("d-none")
       : data.strIngredient1
   }</li>
 
 
                 <li>${
-                  (data.strMeasure2 == null) 
+                  (data.strMeasure2 == null  | "") 
                     ? $(this).addClass("d-none")
                     : data.strMeasure2
                 } ${
-    (data.strIngredient2 == null) 
+    (data.strIngredient2 == null  | "") 
       ? $(this).addClass("d-none")
       : data.strIngredient2
   }</li>
@@ -320,11 +320,11 @@ function showDetailsByMealId(data) {
 
 
                 <li>${
-                  (data.strMeasure3 == null) 
+                  (data.strMeasure3 == null  | "") 
                     ? $(this).addClass("d-none")
                     : data.strMeasure3
                 } ${
-    (data.strIngredient3 == null) 
+    (data.strIngredient3 == null  | "") 
       ? $(this).addClass("d-none")
       : data.strIngredient3
   }
@@ -333,38 +333,40 @@ function showDetailsByMealId(data) {
 
                 <li>
                 ${
-                  (data.strMeasure4 == null) 
+                  (data.strMeasure4 == null  | "") 
                     ? $(this).addClass("d-none")
                     : data.strMeasure4
                 } ${
-    (data.strIngredient4 == null) 
+    (data.strIngredient4 == null  | "") 
       ? $(this).addClass("d-none")
       : data.strIngredient4
   }
                 </li>
 
 
+
                 <li>
                 ${
-                  (data.strMeasure5 == null) 
+                  (data.strMeasure5 == null  | "") 
                     ? $(this).addClass("d-none")
                     : data.strMeasure5
                 } ${
-    (data.strIngredient5 == null) 
+    (data.strIngredient5 == null  | "") 
       ? $(this).addClass("d-none")
       : data.strIngredient5
   }
                 </li>
                 <li>
                 ${
-                  (data.strMeasure7 == null) 
+                  (data.strMeasure7 == null  | "") 
                     ? $(this).addClass("d-none")
                     : data.strMeasure7
                 } ${
-    (data.strIngredient7 == null) 
+    (data.strIngredient7 == null  | "") 
       ? $(this).addClass("d-none")
       : data.strIngredient7
-  }
+  }</li>
+ 
               
             </ul>
           
@@ -506,7 +508,6 @@ async function filterByArea(area) {
     $(".loading").hide();
   });
 }
-
 // this function that get all ingredients from api
 async function getAllIngredients() {
   $(".loading").show();
